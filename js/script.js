@@ -53,8 +53,8 @@ down.addEventListener('click', goDown);
 
 function goDown() {
     document.querySelectorAll('.slide')[currentIndex].classList.remove('active');
-    if (currentIndex == 0) {
-        currentIndex = images.lenght - 1;
+    if (currentIndex === 0) {
+        currentIndex = images.length - 1;
     } else {
         currentIndex --;
     }
