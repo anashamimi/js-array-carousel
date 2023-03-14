@@ -48,3 +48,15 @@ function goUp() {
     }
     document.querySelectorAll('.slide')[currentIndex].classList.add('active');
 }
+
+down.addEventListener('click', goDown);
+
+function goDown() {
+    document.querySelectorAll('.slide')[currentIndex].classList.remove('active');
+    if (currentIndex == 0) {
+        currentIndex = images.lenght - 1;
+    } else {
+        currentIndex --;
+    }
+    document.querySelectorAll('.slide')[currentIndex].classList.add('active');
+}
