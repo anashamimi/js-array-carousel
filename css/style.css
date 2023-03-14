@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #040D40;
+}
+
 #wrapper {
     height: 100vh;
     display: flex;
@@ -17,7 +21,6 @@
     width: 800px;
     height: 500px;
     background-color: black;
-    position: relative;
 }
 
 .slide {
@@ -26,14 +29,16 @@
     display: none;
 }
 
-.slide img {
+.slide img, .aside-slider img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    
 }
 
 button {
-    background-color: white;
+    color: #030826;
+    background-color: #0798F2;
     border-radius: 50%;
     width: 25px;
     height: 25px;
@@ -41,7 +46,13 @@ button {
     right: 0;
     left: 0;
     margin: auto;
+    display: none;
+    transition: all 0.3s;
+}
 
+
+.position-relative:hover button{
+    display: inline-block;
 }
 
 #down {
@@ -54,4 +65,20 @@ button {
 
 .active{
     display: block;
+}
+.aside-slider{
+    width: 150px;
+    height: 500px;
+    background-color: black;
+    position: relative;
+}
+
+.mini-img{
+    height: 100px;
+    opacity: 0.5;
+}
+
+.img-selected{
+    opacity: 1;
+    border: 5px solid #A735F2;
 }

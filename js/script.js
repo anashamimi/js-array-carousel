@@ -22,41 +22,56 @@ const images = [
 
 const slider = document.querySelector('.slider');
 
+const asideSlider = document.querySelector('.aside-slider');
+
 let currentIndex = 0;
 let slides = '';
+let asideSlides = '';
 for (let i = 0; i < images.length; i++) {
     slides += `<div class="slide">
         <img src="${images[i]}" alt="videgame ${i}">
         </div>`;
 }
 
+for (let i = 0; i < images.length; i++) {
+    asideSlides += `<div class="mini-img">
+    <img src="${images[i]}" alt="videgame ${i}"></div>`;
+}
+
 slider.innerHTML += slides;
 
+asideSlider.innerHTML += asideSlides
+
 document.querySelectorAll('.slide')[currentIndex].classList.add('active');
+document.querySelectorAll('.mini-img')[currentIndex].classList.add('img-selected');
 
 const up = document.getElementById('up');
 const down = document.getElementById('down');
 
 up.addEventListener('click', goUp);
 
-function goUp() {
+function goDown() {
     document.querySelectorAll('.slide')[currentIndex].classList.remove('active');
+    document.querySelectorAll('.mini-img')[currentIndex].classList.remove('img-selected');
     if (currentIndex === images.length - 1) {
         currentIndex = 0;
-    } else{
-        currentIndex ++;
+    } else {
+        currentIndex++;
     }
     document.querySelectorAll('.slide')[currentIndex].classList.add('active');
+    document.querySelectorAll('.mini-img')[currentIndex].classList.add('img-selected');
 }
 
 down.addEventListener('click', goDown);
 
-function goDown() {
+function goUp() {
     document.querySelectorAll('.slide')[currentIndex].classList.remove('active');
+    document.querySelectorAll('.mini-img')[currentIndex].classList.remove('img-selected');
     if (currentIndex === 0) {
         currentIndex = images.length - 1;
     } else {
-        currentIndex --;
+        currentIndex--;
     }
     document.querySelectorAll('.slide')[currentIndex].classList.add('active');
+    document.querySelectorAll('.mini-img')[currentIndex].classList.add('img-selected');
 }
