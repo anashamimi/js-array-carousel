@@ -5,3 +5,48 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+#wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    width: 800px;
+    height: 500px;
+    background-color: black;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+button {
+    background-color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+}
+
+#down {
+    bottom: 0;
+}
+
+#up {
+    top: 0;
+}
